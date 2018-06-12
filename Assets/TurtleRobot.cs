@@ -228,6 +228,35 @@ public class TurtleRobot : MonoBehaviour
                 new Command() { Verb = Verb.Fd, Distance = 4 },
                 new Command() { Verb = Verb.Lt, Degrees = 90 },
                 new Command() { Verb = Verb.Rt, Degrees = 180, Distance = 2 }
+            } },
+            { "Bomb", new List<Command>()
+            {
+                new Command() { Verb = Verb.Rt, Degrees = 150, Distance = 1 },
+                new Command() { Verb = Verb.Lt, Degrees = 150, Distance = 1 },
+                new Command() { Verb = Verb.Fd, Distance =  1 },
+                new Command() { Verb = Verb.Lt, Degrees = 180 },
+                new Command() { Verb = Verb.Fd, Distance =  2 },
+                new Command() { Verb = Verb.Lt, Degrees = 180 },
+                new Command() { Verb = Verb.Fd, Distance =  1 },
+                new Command() { Verb = Verb.Rt, Degrees =  60 },
+                new Command() { Verb = Verb.Fd, Distance =  1 },
+                new Command() { Verb = Verb.Lt, Degrees = 180 },
+                new Command() { Verb = Verb.Fd, Distance =  2 },
+                new Command() { Verb = Verb.Lt, Degrees = 180 },
+                new Command() { Verb = Verb.Fd, Distance =  1 },
+                new Command() { Verb = Verb.Rt, Degrees =  60 },
+                new Command() { Verb = Verb.Fd, Distance =  1 },
+                new Command() { Verb = Verb.Lt, Degrees = 180 },
+                new Command() { Verb = Verb.Fd, Distance =  2 },
+                new Command() { Verb = Verb.Lt, Degrees = 180 },
+                new Command() { Verb = Verb.Fd, Distance =  1 },
+                new Command() { Verb = Verb.Rt, Degrees =  60 },
+                new Command() { Verb = Verb.Rt, Degrees = 150, Distance = 1 },
+                new Command() { Verb = Verb.Lt, Degrees = 150, Distance = 1 },
+                new Command() { Verb = Verb.Lt, Degrees =  90 },
+                new Command() { Verb = Verb.Rt, Degrees = 180, Distance = 2 },
+                new Command() { Verb = Verb.Rt, Degrees = 180, Distance = 2 },
+                new Command() { Verb = Verb.Lt, Degrees =  90 }
             } }
         };
 
@@ -698,7 +727,7 @@ public class TurtleRobot : MonoBehaviour
         {
             int amount = 1;
 
-            if (split.Length == 2 && (!int.TryParse(split[1], out amount) || amount < 1 || amount > 22))
+            if (split.Length == 2 && (!int.TryParse(split[1], out amount) || amount < 1 || amount > _shapes.Max(x => x.Value.Count + 6)))
             {
 				yield break;
             }
